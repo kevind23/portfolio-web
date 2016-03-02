@@ -1,0 +1,9 @@
+.image-showcase-p-u img {
+    display: block;
+    margin: 1em auto;
+    max-width: 100%;
+}
+.image-showcase-p-u {
+  margin-left: -40px;
+  margin-right: -40px;
+}
