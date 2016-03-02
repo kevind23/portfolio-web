@@ -41,6 +41,8 @@
         }
     };
 
+    console.log("Looking for the source of this page?\n\
+Find it on GitHub here -> https://github.com/kevind23/portfolio-web");
   }
   ShowcasePages.prototype = {
 
