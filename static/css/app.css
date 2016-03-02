@@ -95,7 +95,7 @@ h2 {
 .left-arrow div {
   left:15px;
 }
-.left-arrow:hover {
+.left-arrow:hover, .left-arrow.hover {
   opacity:1;
   background-image: linear-gradient(to right, rgba(0,0,0,0.5) 0%, transparent 100%);
 }
@@ -105,9 +105,12 @@ h2 {
 .right-arrow div {
   right: 15px;
 }
-.right-arrow:hover {
+.right-arrow:hover, .right-arrow.hover {
   opacity:1;
   background-image: linear-gradient(to left, rgba(0,0,0,0.5) 0%, transparent 100%);
+}
+.left-arrow:hover, .right-arrow:hover {
+  opacity:1 !important;
 }
 .page {
   position:relative;

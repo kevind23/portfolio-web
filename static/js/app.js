@@ -222,4 +222,13 @@
     $('img[data-src]').each(lazyload);
   }));
 
+  $(document).on('ready', function() {
+    // expose left & right arrows on page load
+    if (window.innerWidth > 640) {
+        $('.left-arrow, .right-arrow').addClass('hover').delay(1800).animate({opacity: 0}, 900, 'linear', function(){
+          $(this).removeClass('hover');
+        });
+    }
+  });
+
 })(window, document, jQuery);
