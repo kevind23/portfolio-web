@@ -174,7 +174,7 @@ h2 {
   }
   .content-main:nth-of-type(1) p:nth-of-type(1) {
     /* don't allow text to be obscured by floating image */
-    margin-right: 110px;
+    margin-right: 140px;
   }
   .mobile {
     display: none;
