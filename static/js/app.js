@@ -193,4 +193,33 @@
     }
   });
 
+  // resize events can be expensive, wait (Default: 200ms) between function calls
+  function throttled(originalFunction, wait) {
+    var timeout, wait = wait || 200;
+    return function() {
+      if (timeout == null) {
+        window.setTimeout(function(){
+          originalFunction();
+          timeout = null;
+        }, wait);
+      }
+    }
+  }
+
+  // image lazyloading
+  function lazyload() {
+    var $image = $(this);
+    if ($image.css('display') !== 'none') {
+      $image.attr('src', $image.attr('data-src')).removeAttr('data-src');
+    }
+  }
+  $(window).on('load', function(){
+    // first load images on active page
+    window.showcase.$active.find('img[data-src]').each(lazyload);
+    // load the rest
+    $('img[data-src]').each(lazyload);
+  }).on('resize', throttled(function(){
+    $('img[data-src]').each(lazyload);
+  }));
+
 })(window, document, jQuery);
