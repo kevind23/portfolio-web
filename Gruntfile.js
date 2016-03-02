@@ -63,17 +63,13 @@ module.exports = function(grunt) {
     clean: ['css/', 'js/']
   });
 
-  // Load the plugin that provides the "uglify" task.
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-useref');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
-  grunt.loadNpmTasks('grunt-contrib-cssmin');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-clean');
 
-  // Default task(s).
   grunt.registerTask('build', ['copy', 'useref', 'concat', 'uglify', 'cssmin', 'htmlmin']);
   grunt.registerTask('default', ['jshint', 'build', 'clean']);
   grunt.registerTask('all', ['default', 'imagemin']);
