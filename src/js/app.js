@@ -10,7 +10,7 @@
   };
 
   function ShowcasePages() {
-    this.pages = {},
+    this.pages = {};
     this.sequence = [];
 
     this.state = {
@@ -39,7 +39,7 @@
           self.resizeTimeout =
             window.setTimeout(self.recalculate.bind(self), 150);
         }
-    }
+    };
 
   }
   ShowcasePages.prototype = {
@@ -158,7 +158,7 @@
       $(".page").css("padding-bottom", this.$active.height());
     }
 
-  }
+  };
 
   window.showcase = new ShowcasePages();
   var moveLeft = window.showcase.prevPage.bind(window.showcase);
@@ -178,8 +178,8 @@
   });
 
   $(document).keydown(function(evt){
-    var key = evt.which != null ?
-                evt.which : evt.charCode != null ?
+    var key = evt.which !== null ?
+                evt.which : evt.charCode !== null ?
                     evt.charCode : evt.keyCode;
 
     switch (key) {
@@ -195,15 +195,16 @@
 
   // resize events can be expensive, wait (Default: 200ms) between function calls
   function throttled(originalFunction, wait) {
-    var timeout, wait = wait || 200;
+    var timeout;
+    wait = wait || 200;
     return function() {
-      if (timeout == null) {
+      if (timeout === null || timeout === undefined) {
         window.setTimeout(function(){
           originalFunction();
           timeout = null;
         }, wait);
       }
-    }
+    };
   }
 
   // image lazyloading
