@@ -148,6 +148,10 @@
       }, 425);
 
       this.recalculate();
+
+      if (typeof window.ga === "function") {
+        ga('send', 'event', 'Showcase', 'view', this.state.path);
+      }
     },
 
     recalculate: function() {
@@ -213,6 +217,7 @@
       $image.attr('src', $image.attr('data-src')).removeAttr('data-src');
     }
   }
+
   $(window).on('load', function(){
     // first load images on active page
     window.showcase.$active.find('img[data-src]').each(lazyload);
@@ -230,7 +235,7 @@
         });
     }
   });
-  
+
   console.log("Looking for the source of this page?\n\
 Find it on GitHub here -> https://github.com/kevind23/portfolio-web");
 
