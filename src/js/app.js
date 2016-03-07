@@ -40,9 +40,6 @@
             window.setTimeout(self.recalculate.bind(self), 150);
         }
     };
-
-    console.log("Looking for the source of this page?\n\
-Find it on GitHub here -> https://github.com/kevind23/portfolio-web");
   }
   ShowcasePages.prototype = {
 
@@ -233,5 +230,8 @@ Find it on GitHub here -> https://github.com/kevind23/portfolio-web");
         });
     }
   });
+  
+  console.log("Looking for the source of this page?\n\
+Find it on GitHub here -> https://github.com/kevind23/portfolio-web");
 
 })(window, document, jQuery);
