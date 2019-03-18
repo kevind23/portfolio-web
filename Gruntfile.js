@@ -3,15 +3,6 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    jshint: {
-      options: {
-        multistr: true,
-        globals: {
-          jQuery: true
-        }
-      },
-      dist: ['src/js/*.js']
-    },
     imagemin: {
       options: {
         optimizationLevel: 6
@@ -64,7 +55,6 @@ module.exports = function(grunt) {
     clean: ['css/', 'js/']
   });
 
-  grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-useref');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
@@ -72,7 +62,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
 
   grunt.registerTask('build', ['copy', 'useref', 'concat', 'uglify', 'cssmin', 'htmlmin']);
-  grunt.registerTask('default', ['jshint', 'build', 'clean']);
+  grunt.registerTask('default', ['build', 'clean']);
   grunt.registerTask('all', ['default', 'imagemin']);
 
 };
